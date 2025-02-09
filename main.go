@@ -28,10 +28,8 @@ func main() {
 
 	app := fiber.New()
 
-	// Initialize default config
-	app.Use(logger.New())
-
-	// Middleware
+	app.Use(logger.New()) // Logger middleware
+ 
 	app.Use(cors.New(cors.Config{
 		AllowOrigins:  "https://pos-restaurant.up.railway.app, http://localhost:4200, http://localhost:4000" ,
 		AllowHeaders:     "Origin, Content-Type, Accept",
